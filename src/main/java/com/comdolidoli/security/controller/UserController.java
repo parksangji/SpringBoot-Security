@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.comdolidoli.security.dto.PackageDto;
 import com.comdolidoli.security.dto.UserDto;
 import com.comdolidoli.security.dto.UserFormDto;
 import com.comdolidoli.security.service.UserService;
@@ -29,13 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 public class UserController {
     private final UserService userService;
 
-    @GetMapping
-    public PackageDto getPackDto(){
-        PackageDto packageDto = new PackageDto();
-        packageDto.setNew(false);
 
-        return packageDto;
-    }
     @PostMapping("/signup")
     public String createUser(UserFormDto userFormDto) {
         UserDto userDto = userService.createUser(userFormDto);
