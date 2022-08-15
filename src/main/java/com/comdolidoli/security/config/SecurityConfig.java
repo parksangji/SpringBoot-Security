@@ -20,7 +20,6 @@ import lombok.RequiredArgsConstructor;
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
     private final UserDetailsService userDetailsService;
-
     @Override
     public void configure(WebSecurity web){
         web.ignoring()
@@ -46,7 +45,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
     }
-
     @Bean
     public CustomLoginSuccessHandler customLoginSuccessHandler(){
         return new CustomLoginSuccessHandler();
