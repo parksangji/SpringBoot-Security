@@ -18,5 +18,4 @@ public class UserFormDto {
     @NotNull
     @Length(min = 4, max = 100, message = "비밀번호는 4자 이상, 100자 이하로 입력해주세요.")
     private String password;
-
 }

@@ -11,12 +11,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class UserDto {
-
     private Long id;
     private String email;
     private String password;
     private Role role;
-
     @Builder
     public UserDto(Long id, String email, String password,Role role) {
         this.id = id;
