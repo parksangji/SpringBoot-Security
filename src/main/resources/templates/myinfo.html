@@ -17,7 +17,6 @@
                 <form id="logout" action="/logout" method="POST">
                     <input class="btn btn-primary" type="submit" value="logout">
                 </form>
-
                 <td th:if="${user.role.toString().equals('ADMIN')}">
                     <p class="text-center mt-4"><a href="/admin" class="link-secondary">View member information</a></p>
                 </td>
