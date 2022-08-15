@@ -17,7 +17,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ViewController {
     private final UserRepository userRepository;
-
     @RequestMapping("/login")
     String loginView(){
         return "login";
@@ -27,7 +26,6 @@ public class ViewController {
     String failView(){
         return "fail";
     }
-
     @RequestMapping("/admin")
     ModelAndView andView(){
         List<UserDto> userDtolist = userRepository.findAll().stream().map(u -> UserDto.builder().id(u.getId()).email(u.getEmail()).password(u.getPassword()).role(u.getRole()).build()).collect(Collectors.toList());
@@ -36,7 +34,6 @@ public class ViewController {
 
         return modelAndView;
     }
-
     @RequestMapping("/myinfo")
     ModelAndView myView(Authentication authentication) {
         UserDto userDTO = Optional.ofNullable(userRepository.findByEmail(authentication.getName()))
@@ -48,7 +45,6 @@ public class ViewController {
 
         return modelAndView;
     }
-
     @RequestMapping("/signup")
     String signupView(){
         return "signup";

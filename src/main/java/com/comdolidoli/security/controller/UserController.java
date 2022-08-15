@@ -36,7 +36,6 @@ public class UserController {
 
         return packageDto;
     }
-
     @PostMapping("/signup")
     public String createUser(UserFormDto userFormDto) {
         UserDto userDto = userService.createUser(userFormDto);
