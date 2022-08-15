@@ -25,5 +25,4 @@ public class UserDetailServiceImpl implements UserDetailsService{
                     .orElseThrow(()-> new BadCredentialsException(
                         "이메일 주소를 확인해주세요."));
     }
-
 }

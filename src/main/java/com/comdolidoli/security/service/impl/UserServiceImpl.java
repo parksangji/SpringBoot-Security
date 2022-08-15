@@ -22,10 +22,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserDto createUser(UserFormDto userFormDto) {
 
+        // 이메일 중복 확인
         if(userRepository.findByEmail(userFormDto.getEmail()) != null){
             return null;
         }
-
+        // 가입한 성공한 모든 유저는  "USER" 권한 부여
         User user = userRepository.save(User.builder()
                                         .password(bCryptPasswordEncoder.encode(userFormDto.getPassword()))
                                         .email(userFormDto.getEmail())
