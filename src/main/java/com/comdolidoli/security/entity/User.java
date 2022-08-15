@@ -50,10 +50,8 @@ public class User implements UserDetails{
         this.role = role;
     }
     // override
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // TODO Auto-generated method stub
         Set<GrantedAuthority> roles = new HashSet<>();
         roles.add(new SimpleGrantedAuthority(role.getValue()));
         return roles;
