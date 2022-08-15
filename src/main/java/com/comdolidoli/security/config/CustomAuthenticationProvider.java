@@ -19,7 +19,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     private final UserDetailsService userDetailsService;
     private final BCryptPasswordEncoder passwordEncoder;
-
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         UsernamePasswordAuthenticationToken token = (UsernamePasswordAuthenticationToken) authentication;
@@ -32,7 +31,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         }
         return new UsernamePasswordAuthenticationToken(user, userPassword,user.getAuthorities());
     }
-
     @Override
     public boolean supports(Class<?> authentication) {
         return authentication.equals(UsernamePasswordAuthenticationToken.class);
